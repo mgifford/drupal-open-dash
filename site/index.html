@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drupal Open Dashboard</title>
+  <style>
+    body { font-family: sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; }
+    h1 { font-size: 2em; margin-bottom: 0.5em; }
+    .status, .error { margin-bottom: 1em; padding: 0.5em 1em; border-radius: 4px; }
+    .status { background: #e3f2fd; color: #1976d2; }
+    .error { background: #ffebee; color: #c62828; }
+    .roster { display: flex; flex-wrap: wrap; gap: 0.5em; margin-bottom: 2em; }
+    .roster a { background: #e0e0e0; padding: 0.3em 0.8em; border-radius: 4px; text-decoration: none; color: #333; font-size: 0.95em; }
+    .roster a:hover { background: #bdbdbd; }
+    .top-list { margin-bottom: 2em; }
+    .top-list li { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 0.3em 0; }
+    .chart { width: 100%; max-width: 600px; margin: 2em auto; }
+    @media (max-width: 600px) { .container { padding: 1em; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Drupal Open Dashboard</h1>
+    <div id="status" class="status" style="display:none"></div>
+    <div id="error" class="error" style="display:none"></div>
+    <div><strong>Organization:</strong> <span id="org">CivicActions</span></div>
+    <div id="roster" class="roster"></div>
+    <h2>Top Contributors</h2>
+    <ul id="top-list" class="top-list"></ul>
+    <h2>Contribution Credits (Last 12 Months)</h2>
+    <canvas id="chart" class="chart" height="200"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const CONFIG = {
+      org: 'CivicActions',
+      months: 12,
+      creditsUrl: 'https://new.drupal.org/contribution-records-by-organization-by-user?organization=CivicActions&months=12&page=0',
+    };
+
+    function showStatus(msg) {
+      document.getElementById('status').textContent = msg;
+      document.getElementById('status').style.display = msg ? '' : 'none';
+    }
+    function showError(msg) {
+      document.getElementById('error').textContent = msg;
+      document.getElementById('error').style.display = msg ? '' : 'none';
+    }
+
+    async function fetchCredits() {
+      showStatus('Fetching credits...');
+      try {
+        const res = await fetch(CONFIG.creditsUrl);
+        if (!res.ok) throw new Error('Failed to fetch credits');
+        const data = await res.json();
+        const rows = Array.isArray(data) ? data : (data.results || data.list || data.rows || []);
+        showStatus('Fetched ' + rows.length + ' credits');
+        return rows.map(r => ({
+          username: r.username || r.user_name || 'unknown',
+          date: r.created ? new Date(r.created).getTime() : Date.now(),
+          weight: 1
+        }));
+      } catch (e) {
+        showError('Failed to fetch credits.');
+        throw e;
+      }
+    }
+
+    function getMonthLabels(months) {
+      const labels = [];
+      let d = new Date();
+      d.setDate(1);
+      for (let i = 0; i < months; i++) {
+        labels.unshift(d.toISOString().slice(0,7));
+        d.setMonth(d.getMonth() - 1);
+      }
+      return labels;
+    }
+
+    function aggregateCredits(credits, months) {
+      const labels = getMonthLabels(months);
+      const byMonth = {};
+      labels.forEach(m => byMonth[m] = 0);
+      credits.forEach(c => {
+        const m = new Date(c.date).toISOString().slice(0,7);
+        if (byMonth[m] !== undefined) byMonth[m] += c.weight;
+      });
+      return { labels, byMonth };
+    }
+
+    async function main() {
+      try {
+        const credits = await fetchCredits();
+        // Top contributors
+        const byUser = {};
+        credits.forEach(c => {
+          const u = c.username;
+          byUser[u] = (byUser[u] || 0) + c.weight;
+        });
+        const top = Object.entries(byUser).sort((a,b) => b[1]-a[1]).slice(0,10);
+        document.getElementById('top-list').innerHTML = top.map(([u, w]) => `<li><span>${u}</span><span>${w}</span></li>`).join('');
+        // Chart
+        const { labels, byMonth } = aggregateCredits(credits, CONFIG.months);
+        new Chart(document.getElementById('chart'), {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [{
+              label: 'Credits',
+              data: labels.map(m => byMonth[m]),
+              borderColor: 'rgb(53,162,235)',
+              backgroundColor: 'rgba(53,162,235,0.2)',
+              fill: true
+            }]
+          },
+          options: { responsive: true }
+        });
+        showStatus('');
+      } catch (e) {
+        showError(e.message);
+      }
+    }
+    main();
+  </script>
+</body>
+</html>

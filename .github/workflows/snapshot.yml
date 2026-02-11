@@ -1,0 +1,27 @@
+name: Fetch Drupal & GitLab Snapshots
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Hourly
+  workflow_dispatch:
+
+jobs:
+  fetch-snapshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci --prefix site
+      - name: Run snapshot fetch script
+        run: node scripts/fetch_snapshot.js
+      - name: Commit and push updated snapshots
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add site/public/data/*.json site/public/data/snapshot_timestamp.txt
+          git commit -m 'Update snapshot data [skip ci]' || echo 'No changes to commit'
+          git push
