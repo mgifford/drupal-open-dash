@@ -8,9 +8,21 @@ const path = require('path');
 async function fetchRoster() {
   // Fetch and parse roster from Drupal.org
   const rosterUrl = 'https://www.drupal.org/node/1121122/users';
-  const res = await fetch(rosterUrl);
-  if (!res.ok) throw new Error('Failed to fetch roster');
-  const html = await res.text();
+  const proxyUrl = 'https://api.allorigins.win/raw?url=';
+  let html = '';
+  try {
+    // Try direct fetch with user-agent header
+    const res = await fetch(rosterUrl, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; DrupalOpenDashBot/1.0)' }
+    });
+    if (!res.ok) throw new Error('Direct fetch failed');
+    html = await res.text();
+  } catch (err) {
+    // Fallback to public proxy
+    const proxyRes = await fetch(proxyUrl + encodeURIComponent(rosterUrl));
+    if (!proxyRes.ok) throw new Error('Proxy fetch failed');
+    html = await proxyRes.text();
+  }
   // Simple regex to extract usernames from links to /u/*
   const matches = html.match(/href="\/u\/([^"]+)"/g) || [];
   const usernames = matches.map(m => m.replace(/.*\/u\//, '').replace('"', ''));
