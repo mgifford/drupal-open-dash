@@ -2,7 +2,7 @@ name: Fetch Drupal & GitLab Snapshots
 
 on:
   schedule:
-    - cron: '0 * * * *' # Hourly
+    - cron: '0 0 * * 0' # Weekly, every Sunday at midnight UTC
   workflow_dispatch:
 
 jobs:
