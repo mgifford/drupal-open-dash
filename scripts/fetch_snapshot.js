@@ -32,15 +32,8 @@ async function fetchRoster() {
 
 async function fetchCredits() {
   // Fetch contribution records from new.drupal.org
-  const org = 'CivicActions';
-  // Try legacy api-d7 endpoint
-  const url = `https://www.drupal.org/api-d7/contribution_record.json?organization=${encodeURIComponent(org)}`;
-  const res = await fetch(url, {
-    headers: { 'User-Agent': 'Mozilla/5.0 (compatible; DrupalOpenDashBot/1.0)' }
-  });
-  if (!res.ok) throw new Error('Failed to fetch credits');
-  const data = await res.json();
-  return Array.isArray(data) ? data : (data.results || data.list || data.rows || []);
+  // TODO: Implement credits fetching when a reliable API endpoint is available
+  return [];
 }
 
 async function fetchCommentsByMonth() {
