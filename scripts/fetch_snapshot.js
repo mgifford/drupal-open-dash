@@ -37,17 +37,77 @@ async function fetchCredits() {
 }
 
 async function fetchCommentsByMonth() {
-  // Fetch comments from api-d7
-  // For demo: fetch comments for CivicActions users in last 12 months
-  // This would require resolving user IDs and then fetching comments per user
-  // Here, just return empty array for placeholder
-  return [];
+  // Fetch comments for a few Drupal projects (core and contrib)
+  // We'll use the api-d7 endpoint for project_issue comments
+  const projects = [
+    'drupal', // Drupal core
+    'webform', // Example contrib module
+    'pathauto' // Example contrib module
+  ];
+  const months = 12;
+  const now = new Date();
+  const since = new Date(now.getFullYear(), now.getMonth() - months, 1).toISOString();
+  let allComments = [];
+  for (const project of projects) {
+    // Fetch issues for the project
+    const issuesUrl = `https://www.drupal.org/api-d7/node.json?type=project_issue&field_project_machine_name=${project}`;
+    const issuesRes = await fetch(issuesUrl);
+    if (!issuesRes.ok) continue;
+    const issuesData = await issuesRes.json();
+    const issues = issuesData.list || issuesData.nodes || issuesData;
+    for (const issue of issues) {
+      const nid = issue.nid || issue.id || issue.node || issue.nid;
+      if (!nid) continue;
+      // Fetch comments for the issue
+      const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
+      const commentsRes = await fetch(commentsUrl);
+      if (!commentsRes.ok) continue;
+      const commentsData = await commentsRes.json();
+      const comments = commentsData.list || commentsData.comments || commentsData;
+      for (const comment of comments) {
+        // Only include comments in the last 12 months
+        if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
+          allComments.push({
+            project,
+            issue: nid,
+            author: comment.name,
+            timestamp: comment.timestamp
+          });
+        }
+      }
+    }
+  }
+  return allComments;
 }
 
 async function fetchMRs() {
-  // Fetch MR details from git.drupalcode.org
-  // For demo: return empty array
-  return [];
+  // Fetch MRs for a few Drupal projects (core and contrib)
+  // We'll use the GitLab API for public projects
+  const projects = [
+    'project/drupal',
+    'project/webform',
+    'project/pathauto'
+  ];
+  let allMRs = [];
+  for (const project of projects) {
+    const mrsUrl = `https://git.drupalcode.org/api/v4/projects/${encodeURIComponent(project)}/merge_requests?state=merged&per_page=10`;
+    const mrsRes = await fetch(mrsUrl);
+    if (!mrsRes.ok) continue;
+    const mrs = await mrsRes.json();
+    for (const mr of mrs) {
+      allMRs.push({
+        project,
+        iid: mr.iid,
+        title: mr.title,
+        author: mr.author && mr.author.username,
+        created_at: mr.created_at,
+        merged_at: mr.merged_at,
+        state: mr.state,
+        web_url: mr.web_url
+      });
+    }
+  }
+  return allMRs;
 }
 
 async function main() {
