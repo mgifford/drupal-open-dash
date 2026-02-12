@@ -1,1 +1,302 @@
-[]
+[
+  {
+    "project": "project/drupal",
+    "iid": 14131,
+    "title": "Update top bar text color",
+    "author": "pameeela",
+    "created_at": "2025-12-18T06:21:33.702Z",
+    "merged_at": "2026-01-08T06:53:19.321Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/14131"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 13918,
+    "title": "Resolve #3531516 \"Fix height seriously 2\"",
+    "author": "mherchel",
+    "created_at": "2025-11-21T21:03:14.292Z",
+    "merged_at": "2025-11-22T09:31:40.866Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/13918"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 13460,
+    "title": "Fix error in logic behind getting label earlier in a call that already has a guard",
+    "author": "joelpittet",
+    "created_at": "2025-10-10T23:31:22.635Z",
+    "merged_at": "2025-10-11T12:39:44.075Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/13460"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 13312,
+    "title": "Add View operation by default",
+    "author": "phenaproxima",
+    "created_at": "2025-09-25T14:15:32.005Z",
+    "merged_at": "2025-09-29T18:04:26.768Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/13312"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 12210,
+    "title": "Add Emma as UX manager",
+    "author": "pameeela",
+    "created_at": "2025-05-22T23:54:37.648Z",
+    "merged_at": "2025-05-28T10:10:52.866Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/12210"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 10789,
+    "title": "Fix type.",
+    "author": "longwave",
+    "created_at": "2025-01-03T18:21:04.738Z",
+    "merged_at": "2025-01-03T22:29:05.727Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/10789"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 4652,
+    "title": "Issue #3347672: Create new SDC component for Umami (card view mode)",
+    "author": "finnsky",
+    "created_at": "2023-08-26T11:40:56.679Z",
+    "merged_at": "2023-10-20T12:21:44.574Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/4652"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 4352,
+    "title": "Issue #3373653: Add a `langcode` data type to config schema",
+    "author": "phenaproxima",
+    "created_at": "2023-07-10T15:07:50.307Z",
+    "merged_at": "2023-07-21T21:58:11.730Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/4352"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 4301,
+    "title": "Issue #3371751: Fix HelpSearch queries to ensure db identifiers are properly escaped.",
+    "author": "mondrake",
+    "created_at": "2023-07-01T12:21:16.571Z",
+    "merged_at": "2023-07-01T22:48:08.643Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/4301"
+  },
+  {
+    "project": "project/drupal",
+    "iid": 4292,
+    "title": "Issue #3368681: Provide Template file for forum topic(s)",
+    "author": "AbhijithS",
+    "created_at": "2023-06-30T05:08:46.904Z",
+    "merged_at": "2023-07-03T20:18:18.696Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/drupal/-/merge_requests/4292"
+  },
+  {
+    "project": "project/webform",
+    "iid": 820,
+    "title": "fix: #3572819 Use ::loadMultipleOverrideFree() in webform_update_8648()",
+    "author": "berdir",
+    "created_at": "2026-02-11T14:33:36.024Z",
+    "merged_at": "2026-02-11T16:47:04.807Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/820"
+  },
+  {
+    "project": "project/webform",
+    "iid": 815,
+    "title": "fix: #3569060 Fix incorrect CSS selector for applying off-canvas CSS overrides",
+    "author": "bkosborne",
+    "created_at": "2026-01-22T18:24:06.881Z",
+    "merged_at": "2026-02-10T15:23:38.691Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/815"
+  },
+  {
+    "project": "project/webform",
+    "iid": 808,
+    "title": "fix: #3568000 Replace content_translation_form_language_content_settings_submit() with ContentTranslationFormLanguageHooks",
+    "author": "ritarshi_chakraborty",
+    "created_at": "2026-01-19T07:26:55.187Z",
+    "merged_at": "2026-01-19T16:08:16.757Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/808"
+  },
+  {
+    "project": "project/webform",
+    "iid": 805,
+    "title": "fix: #3568039 Use fgetcsv() to advance offset during batch imports",
+    "author": "ceastwood",
+    "created_at": "2026-01-16T21:14:53.422Z",
+    "merged_at": "2026-01-19T19:29:31.471Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/805"
+  },
+  {
+    "project": "project/webform",
+    "iid": 803,
+    "title": "fix: #3567894 Do not pass NULL to string param to preg_match()",
+    "author": "konstara",
+    "created_at": "2026-01-16T08:27:28.091Z",
+    "merged_at": "2026-01-16T15:29:53.538Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/803"
+  },
+  {
+    "project": "project/webform",
+    "iid": 795,
+    "title": "fix: #3565422 Replace SQL table alias `user` which is invalid in PostgreSQL",
+    "author": "guedressel",
+    "created_at": "2026-01-03T10:18:51.424Z",
+    "merged_at": "2026-01-03T15:54:24.734Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/795"
+  },
+  {
+    "project": "project/webform",
+    "iid": 793,
+    "title": "fix: #3565161 Fix issues raised by phpstan",
+    "author": "lkmorlan",
+    "created_at": "2025-12-30T15:30:45.777Z",
+    "merged_at": "2025-12-30T15:58:37.309Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/793"
+  },
+  {
+    "project": "project/webform",
+    "iid": 790,
+    "title": "fix: #3478047 Fix issues raised by stylelint",
+    "author": "lkmorlan",
+    "created_at": "2025-12-16T15:37:39.678Z",
+    "merged_at": "2025-12-16T15:55:58.770Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/790"
+  },
+  {
+    "project": "project/webform",
+    "iid": 789,
+    "title": "fix: #3563385 Correct conditional in aria-describedby workaround",
+    "author": "berdir",
+    "created_at": "2025-12-16T08:02:26.710Z",
+    "merged_at": "2025-12-30T15:24:41.020Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/789"
+  },
+  {
+    "project": "project/webform",
+    "iid": 783,
+    "title": "fix: #3558621 Use canonical type names",
+    "author": "solideogloria",
+    "created_at": "2025-12-02T15:22:53.127Z",
+    "merged_at": "2025-12-03T14:24:07.981Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/783"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 139,
+    "title": "task: #3572617 Add Tugboat support",
+    "author": "mably",
+    "created_at": "2026-02-10T15:27:19.153Z",
+    "merged_at": "2026-02-12T12:01:02.626Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/139"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 116,
+    "title": "task: #3571944 phpstan fixes",
+    "author": "mably",
+    "created_at": "2026-02-06T10:37:16.008Z",
+    "merged_at": "2026-02-11T23:27:04.496Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/116"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 115,
+    "title": "task: #3571922 cspell fixes",
+    "author": "mably",
+    "created_at": "2026-02-06T08:36:01.679Z",
+    "merged_at": "2026-02-11T22:53:10.270Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/115"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 114,
+    "title": "task: #3571880 phpcs fixes",
+    "author": "mably",
+    "created_at": "2026-02-05T22:15:21.428Z",
+    "merged_at": "2026-02-11T22:22:28.230Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/114"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 113,
+    "title": "task: #3571828 Fix failing kernel test",
+    "author": "mably",
+    "created_at": "2026-02-05T18:31:14.254Z",
+    "merged_at": "2026-02-05T19:31:54.047Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/113"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 109,
+    "title": "Use attributes",
+    "author": "berdir",
+    "created_at": "2025-10-17T22:02:20.429Z",
+    "merged_at": "2025-10-18T08:55:20.158Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/109"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 106,
+    "title": "Resolve #3550710 \"Convert to oop\"",
+    "author": "berdir",
+    "created_at": "2025-10-07T12:16:34.788Z",
+    "merged_at": "2025-10-17T21:23:51.969Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/106"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 105,
+    "title": "Issue #3411478:Fix error message formatting in bulk update form.",
+    "author": "dhruv.mittal",
+    "created_at": "2025-09-15T06:50:18.897Z",
+    "merged_at": "2025-09-15T22:00:32.754Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/105"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 98,
+    "title": "Issue #3533941: Allow pathauto services to be autowired",
+    "author": "idebr",
+    "created_at": "2025-07-03T12:36:06.407Z",
+    "merged_at": "2025-09-10T19:09:51.253Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/98"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 91,
+    "title": "fix implicit nullable deprecations",
+    "author": "ptmkenny",
+    "created_at": "2024-11-22T06:16:08.610Z",
+    "merged_at": "2025-09-10T18:52:54.270Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/91"
+  }
+]
