@@ -7,27 +7,34 @@ const path = require('path');
 // Placeholder: implement fetch logic for each data source
 async function fetchRoster() {
   // Fetch and parse roster from Drupal.org
-  const rosterUrl = 'https://www.drupal.org/node/1121122/users';
+  const baseUrl = 'https://www.drupal.org/node/1121122/users';
   const proxyUrl = 'https://api.allorigins.win/raw?url=';
-  let html = '';
-  try {
-    // Try direct fetch with user-agent header
-    const res = await fetch(rosterUrl, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; DrupalOpenDashBot/1.0)' }
-    });
-    if (!res.ok) throw new Error('Direct fetch failed');
-    html = await res.text();
-  } catch (err) {
-    // Fallback to public proxy
-    const proxyRes = await fetch(proxyUrl + encodeURIComponent(rosterUrl));
-    if (!proxyRes.ok) throw new Error('Proxy fetch failed');
-    html = await proxyRes.text();
+  let page = 0;
+  let allUsernames = new Set();
+  let hasNext = true;
+  while (hasNext) {
+    const url = page === 0 ? baseUrl : `${baseUrl}?page=${page}`;
+    let html = '';
+    try {
+      const res = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; DrupalOpenDashBot/1.0)' }
+      });
+      if (!res.ok) throw new Error('Direct fetch failed');
+      html = await res.text();
+    } catch (err) {
+      const proxyRes = await fetch(proxyUrl + encodeURIComponent(url));
+      if (!proxyRes.ok) throw new Error('Proxy fetch failed');
+      html = await proxyRes.text();
+    }
+    // Extract usernames from links to /u/*
+    const matches = html.match(/href="\/u\/([^"]+)"/g) || [];
+    const usernames = matches.map(m => m.replace(/.*\/u\//, '').replace('"', ''));
+    usernames.forEach(u => allUsernames.add(u));
+    // Check for next page: look for a 'pager-next' link
+    hasNext = /class="pager-next"/.test(html);
+    page++;
   }
-  // Simple regex to extract usernames from links to /u/*
-  const matches = html.match(/href="\/u\/([^"]+)"/g) || [];
-  const usernames = matches.map(m => m.replace(/.*\/u\//, '').replace('"', ''));
-  // Deduplicate and normalize
-  return Array.from(new Set(usernames)).map(u => ({ username: u }));
+  return Array.from(allUsernames).map(u => ({ username: u }));
 }
 
 async function fetchCredits() {
@@ -38,7 +45,6 @@ async function fetchCredits() {
 
 async function fetchCommentsByMonth() {
   // Fetch comments for a few Drupal projects (core and contrib)
-  // We'll use the api-d7 endpoint for project_issue comments
   const projects = [
     'drupal', // Drupal core
     'webform', // Example contrib module
@@ -49,7 +55,6 @@ async function fetchCommentsByMonth() {
   const since = new Date(now.getFullYear(), now.getMonth() - months, 1).toISOString();
   let allComments = [];
   for (const project of projects) {
-    // Fetch issues for the project
     const issuesUrl = `https://www.drupal.org/api-d7/node.json?type=project_issue&field_project_machine_name=${project}`;
     const issuesRes = await fetch(issuesUrl);
     if (!issuesRes.ok) continue;
@@ -58,14 +63,12 @@ async function fetchCommentsByMonth() {
     for (const issue of issues) {
       const nid = issue.nid || issue.id || issue.node || issue.nid;
       if (!nid) continue;
-      // Fetch comments for the issue
       const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
       const commentsRes = await fetch(commentsUrl);
       if (!commentsRes.ok) continue;
       const commentsData = await commentsRes.json();
       const comments = commentsData.list || commentsData.comments || commentsData;
       for (const comment of comments) {
-        // Only include comments in the last 12 months
         if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
           allComments.push({
             project,
@@ -77,7 +80,14 @@ async function fetchCommentsByMonth() {
       }
     }
   }
-  return allComments;
+  // Aggregate by month (UTC)
+  const commentsByMonth = {};
+  for (const c of allComments) {
+    const d = new Date(c.timestamp * 1000);
+    const month = d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0');
+    commentsByMonth[month] = (commentsByMonth[month] || 0) + 1;
+  }
+  return commentsByMonth;
 }
 
 async function fetchMRs() {
