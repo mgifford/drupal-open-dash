@@ -1,6 +1,6 @@
 # Drupal Open Dash
 
-Drupal Open Dash is a static dashboard for visualizing Drupal.org and GitLab activity for an organization roster. It is designed for fully static hosting (e.g., GitHub Pages) and pre-fetches all data via scheduled GitHub Actions, serving only static JSON snapshots to the frontend.
+An initial attempt to build a Drupal Open Dashboard is a static dashboard for visualizing Drupal.org and GitLab activity for an organization roster. It is designed for fully static hosting (e.g., GitHub Pages) and pre-fetches all data via scheduled GitHub Actions, serving only static JSON snapshots to the frontend.
 
 ## Features
 - Visualizes Drupal issue comments, merge requests, credits, and project activity
