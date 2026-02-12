@@ -56,52 +56,63 @@ async function fetchCommentsByMonth() {
   const since = new Date(now.getFullYear(), now.getMonth() - months, 1).toISOString();
   let allComments = [];
   for (const project of projects) {
-    const issuesUrl = `https://www.drupal.org/api-d7/node.json?type=project_issue&field_project_machine_name=${project}`;
-    try {
-      const issuesRes = await fetch(issuesUrl);
-      if (!issuesRes.ok) {
-        console.warn(`Failed to fetch issues for project ${project}: ${issuesRes.status}`);
-        continue;
-      }
-      const issuesData = await issuesRes.json();
-      const issues = issuesData.list || issuesData.nodes || issuesData;
-      if (!Array.isArray(issues) || issues.length === 0) {
-        console.warn(`No issues found for project ${project}`);
-        continue;
-      }
-      for (const issue of issues) {
-        const nid = issue.nid || issue.id || issue.node || issue.nid;
-        if (!nid) continue;
-        const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
-        try {
-          const commentsRes = await fetch(commentsUrl);
-          if (!commentsRes.ok) {
-            console.warn(`Failed to fetch comments for issue ${nid}: ${commentsRes.status}`);
-            continue;
-          }
-          const commentsData = await commentsRes.json();
-          const comments = commentsData.list || commentsData.comments || commentsData;
-          if (!Array.isArray(comments) || comments.length === 0) {
-            // No comments for this issue
-            continue;
-          }
-          for (const comment of comments) {
-            if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
-              allComments.push({
-                project,
-                issue: nid,
-                author: comment.name,
-                timestamp: comment.timestamp
-              });
-            }
-          }
-        } catch (err) {
-          console.error(`Error fetching comments for issue ${nid}:`, err);
+    let page = 0;
+    let hasNext = true;
+    let totalIssues = 0;
+    while (hasNext) {
+      const issuesUrl = `https://www.drupal.org/api-d7/node.json?type=project_issue&field_project_machine_name=${project}&page=${page}`;
+      try {
+        const issuesRes = await fetch(issuesUrl);
+        if (!issuesRes.ok) {
+          console.warn(`Failed to fetch issues for project ${project} (page ${page}): ${issuesRes.status}`);
+          break;
         }
+        const issuesData = await issuesRes.json();
+        console.log(`Raw issues API response for project ${project} page ${page}:`, JSON.stringify(issuesData).slice(0, 500));
+        const issues = issuesData.list || issuesData.nodes || issuesData;
+        if (!Array.isArray(issues) || issues.length === 0) {
+          if (page === 0) console.warn(`No issues found for project ${project}`);
+          break;
+        }
+        totalIssues += issues.length;
+        for (const issue of issues) {
+          const nid = issue.nid || issue.id || issue.node || issue.nid;
+          if (!nid) continue;
+          const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
+          try {
+            const commentsRes = await fetch(commentsUrl);
+            if (!commentsRes.ok) {
+              console.warn(`Failed to fetch comments for issue ${nid}: ${commentsRes.status}`);
+              continue;
+            }
+            const commentsData = await commentsRes.json();
+            const comments = commentsData.list || commentsData.comments || commentsData;
+            if (!Array.isArray(comments) || comments.length === 0) {
+              continue;
+            }
+            for (const comment of comments) {
+              if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
+                allComments.push({
+                  project,
+                  issue: nid,
+                  author: comment.name,
+                  timestamp: comment.timestamp
+                });
+              }
+            }
+          } catch (err) {
+            console.error(`Error fetching comments for issue ${nid}:`, err);
+          }
+        }
+        // Pagination: api-d7 returns a 'next' link in 'links' or use length < 50 as end
+        hasNext = Array.isArray(issues) && issues.length === 50;
+        page++;
+      } catch (err) {
+        console.error(`Error fetching issues for project ${project} (page ${page}):`, err);
+        break;
       }
-    } catch (err) {
-      console.error(`Error fetching issues for project ${project}:`, err);
     }
+    console.log(`Fetched ${totalIssues} issues for project ${project}`);
   }
   console.log(`Fetched ${allComments.length} comments across all projects.`);
   // Aggregate by month (UTC)
