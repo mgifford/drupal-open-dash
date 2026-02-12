@@ -45,6 +45,7 @@ async function fetchCredits() {
 
 async function fetchCommentsByMonth() {
   // Fetch comments for a few Drupal projects (core and contrib)
+  console.log('Fetching comments for selected Drupal projects...');
   const projects = [
     'drupal', // Drupal core
     'webform', // Example contrib module
@@ -56,36 +57,63 @@ async function fetchCommentsByMonth() {
   let allComments = [];
   for (const project of projects) {
     const issuesUrl = `https://www.drupal.org/api-d7/node.json?type=project_issue&field_project_machine_name=${project}`;
-    const issuesRes = await fetch(issuesUrl);
-    if (!issuesRes.ok) continue;
-    const issuesData = await issuesRes.json();
-    const issues = issuesData.list || issuesData.nodes || issuesData;
-    for (const issue of issues) {
-      const nid = issue.nid || issue.id || issue.node || issue.nid;
-      if (!nid) continue;
-      const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
-      const commentsRes = await fetch(commentsUrl);
-      if (!commentsRes.ok) continue;
-      const commentsData = await commentsRes.json();
-      const comments = commentsData.list || commentsData.comments || commentsData;
-      for (const comment of comments) {
-        if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
-          allComments.push({
-            project,
-            issue: nid,
-            author: comment.name,
-            timestamp: comment.timestamp
-          });
+    try {
+      const issuesRes = await fetch(issuesUrl);
+      if (!issuesRes.ok) {
+        console.warn(`Failed to fetch issues for project ${project}: ${issuesRes.status}`);
+        continue;
+      }
+      const issuesData = await issuesRes.json();
+      const issues = issuesData.list || issuesData.nodes || issuesData;
+      if (!Array.isArray(issues) || issues.length === 0) {
+        console.warn(`No issues found for project ${project}`);
+        continue;
+      }
+      for (const issue of issues) {
+        const nid = issue.nid || issue.id || issue.node || issue.nid;
+        if (!nid) continue;
+        const commentsUrl = `https://www.drupal.org/api-d7/comment.json?node_nid=${nid}`;
+        try {
+          const commentsRes = await fetch(commentsUrl);
+          if (!commentsRes.ok) {
+            console.warn(`Failed to fetch comments for issue ${nid}: ${commentsRes.status}`);
+            continue;
+          }
+          const commentsData = await commentsRes.json();
+          const comments = commentsData.list || commentsData.comments || commentsData;
+          if (!Array.isArray(comments) || comments.length === 0) {
+            // No comments for this issue
+            continue;
+          }
+          for (const comment of comments) {
+            if (comment.timestamp && new Date(comment.timestamp * 1000) >= new Date(since)) {
+              allComments.push({
+                project,
+                issue: nid,
+                author: comment.name,
+                timestamp: comment.timestamp
+              });
+            }
+          }
+        } catch (err) {
+          console.error(`Error fetching comments for issue ${nid}:`, err);
         }
       }
+    } catch (err) {
+      console.error(`Error fetching issues for project ${project}:`, err);
     }
   }
+  console.log(`Fetched ${allComments.length} comments across all projects.`);
   // Aggregate by month (UTC)
   const commentsByMonth = {};
   for (const c of allComments) {
     const d = new Date(c.timestamp * 1000);
     const month = d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0');
     commentsByMonth[month] = (commentsByMonth[month] || 0) + 1;
+  }
+  console.log('Aggregated comments by month:', commentsByMonth);
+  if (Object.keys(commentsByMonth).length === 0) {
+    console.warn('No comments found for any month. Output will be an empty object.');
   }
   return commentsByMonth;
 }
