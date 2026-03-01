@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 829,
+    "title": "fix: #3575614 Use colon to open case statements",
+    "author": "SVICER",
+    "created_at": "2026-02-25T09:19:12.402Z",
+    "merged_at": "2026-02-25T14:40:45.979Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/829"
+  },
+  {
+    "project": "project/webform",
     "iid": 827,
     "title": "fix: #3550117 Re-enable skipped test",
     "author": "lkmorlan",
@@ -188,16 +198,6 @@
     "merged_at": "2025-12-30T15:58:37.309Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/793"
-  },
-  {
-    "project": "project/webform",
-    "iid": 790,
-    "title": "fix: #3478047 Fix issues raised by stylelint",
-    "author": "lkmorlan",
-    "created_at": "2025-12-16T15:37:39.678Z",
-    "merged_at": "2025-12-16T15:55:58.770Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/790"
   },
   {
     "project": "project/pathauto",
