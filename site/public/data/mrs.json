@@ -101,6 +101,26 @@
   },
   {
     "project": "project/webform",
+    "iid": 835,
+    "title": "fix: #3576340 Fix memory leak in batch export causing incomplete CSV for large numbers of submissions",
+    "author": "root_emarketing",
+    "created_at": "2026-03-01T09:41:27.301Z",
+    "merged_at": "2026-03-06T14:54:42.047Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/835"
+  },
+  {
+    "project": "project/webform",
+    "iid": 834,
+    "title": "fix: #3576379 Fix flaky WebformElementComputedJavaScriptTest",
+    "author": "mably",
+    "created_at": "2026-03-01T08:53:50.243Z",
+    "merged_at": "2026-03-02T16:51:25.846Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/834"
+  },
+  {
+    "project": "project/webform",
     "iid": 829,
     "title": "fix: #3575614 Use colon to open case statements",
     "author": "SVICER",
@@ -178,26 +198,6 @@
     "merged_at": "2026-01-16T15:29:53.538Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/803"
-  },
-  {
-    "project": "project/webform",
-    "iid": 795,
-    "title": "fix: #3565422 Replace SQL table alias `user` which is invalid in PostgreSQL",
-    "author": "guedressel",
-    "created_at": "2026-01-03T10:18:51.424Z",
-    "merged_at": "2026-01-03T15:54:24.734Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/795"
-  },
-  {
-    "project": "project/webform",
-    "iid": 793,
-    "title": "fix: #3565161 Fix issues raised by phpstan",
-    "author": "lkmorlan",
-    "created_at": "2025-12-30T15:30:45.777Z",
-    "merged_at": "2025-12-30T15:58:37.309Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/793"
   },
   {
     "project": "project/pathauto",
