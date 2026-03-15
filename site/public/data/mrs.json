@@ -201,6 +201,26 @@
   },
   {
     "project": "project/pathauto",
+    "iid": 167,
+    "title": "Remove uuid key of condition plugins from configuration",
+    "author": "morvaim",
+    "created_at": "2026-03-05T14:59:34.170Z",
+    "merged_at": "2026-03-12T09:21:13.663Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/167"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 165,
+    "title": "#3576435 Fix PHP8.5 deprecation by not caching patterns for new netities.",
+    "author": "Hydra",
+    "created_at": "2026-03-01T22:40:52.855Z",
+    "merged_at": "2026-03-12T10:13:51.197Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/165"
+  },
+  {
+    "project": "project/pathauto",
     "iid": 163,
     "title": "fix: #3072876 Pattern not removed when deleting the corresponding entity",
     "author": "mably",
@@ -228,6 +248,16 @@
     "merged_at": "2026-02-13T15:03:26.308Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/155"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 149,
+    "title": "fix: #3267989 \"The alias is already in use in this language\" should not be thrown when \"automatic URL alias\" is enabled",
+    "author": "mably",
+    "created_at": "2026-02-12T13:59:46.350Z",
+    "merged_at": "2026-03-13T22:14:59.286Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/149"
   },
   {
     "project": "project/pathauto",
@@ -268,35 +298,5 @@
     "merged_at": "2026-02-12T12:01:02.626Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/139"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 130,
-    "title": "feat: #3181986 Add support for unicode soft hyphens on punctuation logic",
-    "author": "mably",
-    "created_at": "2026-02-09T18:47:35.414Z",
-    "merged_at": "2026-02-13T09:31:48.856Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/130"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 123,
-    "title": "feat: #3419907 Improve status message on alias create/update",
-    "author": "mably",
-    "created_at": "2026-02-08T19:22:52.431Z",
-    "merged_at": "2026-02-18T12:26:08.851Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/123"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 122,
-    "title": "task: #3124089 t() calls should be avoided in classes",
-    "author": "mably",
-    "created_at": "2026-02-08T18:27:26.237Z",
-    "merged_at": "2026-02-12T17:08:53.914Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/122"
   }
 ]
