@@ -263,3 +263,16 @@ When adding a new panel/metric:
 - Credits endpoints may not provide per-event timestamps; if only period totals exist, chart by period and label it accurately.
 
 Update this list when limitations change.
+
+## AI Disclosure (required)
+
+This project requires transparency about AI involvement. When making contributions using an AI tool:
+
+- **Always update the `AI Disclosure` section in `README.md`** to reflect any AI tools used.
+- For each AI tool or LLM used, document:
+  - The name of the AI tool or model.
+  - What it was used for (e.g., code generation, documentation, scaffolding, review).
+  - Whether it is used at build time, development time, or runtime.
+- Do not list AI tools that were not actually used.
+- No AI should be invoked at runtime by the application (no browser-based AI, no server-side AI calls).
+- If browser-based or runtime AI is ever added, it must be disclosed in `README.md` with a clear description of what data is sent and to which service.
