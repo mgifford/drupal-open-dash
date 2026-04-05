@@ -201,6 +201,16 @@
   },
   {
     "project": "project/pathauto",
+    "iid": 170,
+    "title": "Lock forum dev dependency to working version",
+    "author": "berdir",
+    "created_at": "2026-03-30T21:21:43.681Z",
+    "merged_at": "2026-03-31T06:46:12.487Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/170"
+  },
+  {
+    "project": "project/pathauto",
     "iid": 167,
     "title": "Remove uuid key of condition plugins from configuration",
     "author": "morvaim",
@@ -288,15 +298,5 @@
     "merged_at": "2026-02-17T20:27:57.113Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/144"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 142,
-    "title": "fix: #3367067 All aliases are deleted if entity with \\<nolink\\> url is deleted",
-    "author": "mably",
-    "created_at": "2026-02-10T22:33:45.567Z",
-    "merged_at": "2026-02-12T23:06:30.070Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/142"
   }
 ]
