@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 858,
+    "title": "fix: #3573777 Return array from WebformAccessGroupEntityBlock::build()",
+    "author": "markfullmer",
+    "created_at": "2026-04-24T19:16:35.250Z",
+    "merged_at": "2026-04-24T19:44:21.819Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/858"
+  },
+  {
+    "project": "project/webform",
     "iid": 835,
     "title": "fix: #3576340 Fix memory leak in batch export causing incomplete CSV for large numbers of submissions",
     "author": "root_emarketing",
@@ -188,16 +198,6 @@
     "merged_at": "2026-01-19T19:29:31.471Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/805"
-  },
-  {
-    "project": "project/webform",
-    "iid": 803,
-    "title": "fix: #3567894 Do not pass NULL to string param to preg_match()",
-    "author": "konstara",
-    "created_at": "2026-01-16T08:27:28.091Z",
-    "merged_at": "2026-01-16T15:29:53.538Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/803"
   },
   {
     "project": "project/pathauto",
