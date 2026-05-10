@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 864,
+    "title": "fix: #3588766 Fix broken help link",
+    "author": "lkmorlan",
+    "created_at": "2026-05-06T15:37:20.866Z",
+    "merged_at": "2026-05-06T15:48:36.549Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/864"
+  },
+  {
+    "project": "project/webform",
     "iid": 858,
     "title": "fix: #3573777 Return array from WebformAccessGroupEntityBlock::build()",
     "author": "markfullmer",
@@ -190,16 +200,6 @@
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/808"
   },
   {
-    "project": "project/webform",
-    "iid": 805,
-    "title": "fix: #3568039 Use fgetcsv() to advance offset during batch imports",
-    "author": "ceastwood",
-    "created_at": "2026-01-16T21:14:53.422Z",
-    "merged_at": "2026-01-19T19:29:31.471Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/805"
-  },
-  {
     "project": "project/pathauto",
     "iid": 170,
     "title": "Lock forum dev dependency to working version",
@@ -228,6 +228,16 @@
     "merged_at": "2026-03-12T10:13:51.197Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/165"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 164,
+    "title": "fix: #3187945 Fix hooks and documentation to alter source path",
+    "author": "mably",
+    "created_at": "2026-02-22T17:28:50.201Z",
+    "merged_at": "2026-05-04T21:36:43.599Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/164"
   },
   {
     "project": "project/pathauto",
@@ -288,15 +298,5 @@
     "merged_at": "2026-02-12T22:46:31.277Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/146"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 144,
-    "title": "fix: #2728725 Special characters like tab or spaces in pattern can break alias generation",
-    "author": "mably",
-    "created_at": "2026-02-11T11:42:48.736Z",
-    "merged_at": "2026-02-17T20:27:57.113Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/144"
   }
 ]
