@@ -101,6 +101,26 @@
   },
   {
     "project": "project/webform",
+    "iid": 866,
+    "title": "fix: #3589284 Remove unused `value` variable in `webform.element.signature.js`",
+    "author": "garvitasakhrani",
+    "created_at": "2026-05-15T05:07:34.410Z",
+    "merged_at": "2026-05-15T14:46:42.995Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/866"
+  },
+  {
+    "project": "project/webform",
+    "iid": 865,
+    "title": "fix: #3589901 Do not use null as an array offset in WebformPluginElementController",
+    "author": "sivaji",
+    "created_at": "2026-05-13T10:51:57.551Z",
+    "merged_at": "2026-05-13T13:10:58.961Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/865"
+  },
+  {
+    "project": "project/webform",
     "iid": 864,
     "title": "fix: #3588766 Fix broken help link",
     "author": "lkmorlan",
@@ -108,6 +128,16 @@
     "merged_at": "2026-05-06T15:48:36.549Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/864"
+  },
+  {
+    "project": "project/webform",
+    "iid": 859,
+    "title": "fix: #3586789 Prevent InvalidArgumentException when source YAML is invalid",
+    "author": "lkmorlan",
+    "created_at": "2026-04-24T20:32:17.933Z",
+    "merged_at": "2026-05-15T21:10:42.206Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/859"
   },
   {
     "project": "project/webform",
@@ -168,36 +198,6 @@
     "merged_at": "2026-02-19T14:56:13.068Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/826"
-  },
-  {
-    "project": "project/webform",
-    "iid": 820,
-    "title": "fix: #3572819 Use ::loadMultipleOverrideFree() in webform_update_8648()",
-    "author": "berdir",
-    "created_at": "2026-02-11T14:33:36.024Z",
-    "merged_at": "2026-02-11T16:47:04.807Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/820"
-  },
-  {
-    "project": "project/webform",
-    "iid": 815,
-    "title": "fix: #3569060 Fix incorrect CSS selector for applying off-canvas CSS overrides",
-    "author": "bkosborne",
-    "created_at": "2026-01-22T18:24:06.881Z",
-    "merged_at": "2026-02-10T15:23:38.691Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/815"
-  },
-  {
-    "project": "project/webform",
-    "iid": 808,
-    "title": "fix: #3568000 Replace content_translation_form_language_content_settings_submit() with ContentTranslationFormLanguageHooks",
-    "author": "ritarshi_chakraborty",
-    "created_at": "2026-01-19T07:26:55.187Z",
-    "merged_at": "2026-01-19T16:08:16.757Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/808"
   },
   {
     "project": "project/pathauto",
