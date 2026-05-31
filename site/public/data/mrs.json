@@ -101,6 +101,26 @@
   },
   {
     "project": "project/webform",
+    "iid": 872,
+    "title": "fix: #3592693 Fix docblock typehint on WebformHandlerInterface::setHandlerId()",
+    "author": "jvollebregt-swis",
+    "created_at": "2026-05-29T10:54:37.849Z",
+    "merged_at": "2026-05-29T14:05:07.891Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/872"
+  },
+  {
+    "project": "project/webform",
+    "iid": 868,
+    "title": "feat: #3588934 Add `cleantalk` to the list of recommended spam protection modules",
+    "author": "cleantalk_alexander",
+    "created_at": "2026-05-15T20:59:17.023Z",
+    "merged_at": "2026-05-28T13:34:11.017Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/868"
+  },
+  {
+    "project": "project/webform",
     "iid": 867,
     "title": "fix: #3590360 Make tests pass on PHP 8.5",
     "author": "lkmorlan",
@@ -178,26 +198,6 @@
     "merged_at": "2026-03-02T16:51:25.846Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/834"
-  },
-  {
-    "project": "project/webform",
-    "iid": 829,
-    "title": "fix: #3575614 Use colon to open case statements",
-    "author": "SVICER",
-    "created_at": "2026-02-25T09:19:12.402Z",
-    "merged_at": "2026-02-25T14:40:45.979Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/829"
-  },
-  {
-    "project": "project/webform",
-    "iid": 827,
-    "title": "fix: #3550117 Re-enable skipped test",
-    "author": "lkmorlan",
-    "created_at": "2026-02-20T17:16:07.368Z",
-    "merged_at": "2026-02-20T18:05:36.749Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/827"
   },
   {
     "project": "project/pathauto",
