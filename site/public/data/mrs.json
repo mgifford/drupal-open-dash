@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 882,
+    "title": "fix: #3594252 Catch exceptions in scheduled email cron",
+    "author": "lkmorlan",
+    "created_at": "2026-06-15T15:14:39.898Z",
+    "merged_at": "2026-06-15T15:32:27.221Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/882"
+  },
+  {
+    "project": "project/webform",
     "iid": 880,
     "title": "fix: #3594290 Add void return type declaration to test methods",
     "author": "lkmorlan",
@@ -118,6 +128,16 @@
     "merged_at": "2026-06-08T20:00:25.420Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/879"
+  },
+  {
+    "project": "project/webform",
+    "iid": 878,
+    "title": "fix: #3594252 Catch exceptions in scheduled email cron",
+    "author": "thronedigital",
+    "created_at": "2026-06-08T16:01:57.374Z",
+    "merged_at": "2026-06-15T13:59:53.859Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/878"
   },
   {
     "project": "project/webform",
@@ -178,26 +198,6 @@
     "merged_at": "2026-05-13T13:10:58.961Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/865"
-  },
-  {
-    "project": "project/webform",
-    "iid": 864,
-    "title": "fix: #3588766 Fix broken help link",
-    "author": "lkmorlan",
-    "created_at": "2026-05-06T15:37:20.866Z",
-    "merged_at": "2026-05-06T15:48:36.549Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/864"
-  },
-  {
-    "project": "project/webform",
-    "iid": 859,
-    "title": "fix: #3586789 Prevent InvalidArgumentException when source YAML is invalid",
-    "author": "lkmorlan",
-    "created_at": "2026-04-24T20:32:17.933Z",
-    "merged_at": "2026-05-15T21:10:42.206Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/859"
   },
   {
     "project": "project/pathauto",
