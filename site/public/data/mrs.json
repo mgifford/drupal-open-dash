@@ -201,6 +201,16 @@
   },
   {
     "project": "project/pathauto",
+    "iid": 179,
+    "title": "Resolve #3601975 \"Automated drupal 12\"",
+    "author": "berdir",
+    "created_at": "2026-06-21T09:27:43.791Z",
+    "merged_at": "2026-07-04T11:26:36.897Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/179"
+  },
+  {
+    "project": "project/pathauto",
     "iid": 174,
     "title": "fix: Patch pathauto missing source_module                                     ...",
     "author": "makkus183",
@@ -288,15 +298,5 @@
     "merged_at": "2026-02-13T15:03:26.308Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/155"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 150,
-    "title": "fix: #3247809 Notice of updated alias when there was no change",
-    "author": "mably",
-    "created_at": "2026-02-12T18:15:31.456Z",
-    "merged_at": "2026-03-16T19:30:46.991Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/150"
   }
 ]
