@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 887,
+    "title": "fix: #3593002 Clarify WebformHandlerInterface documentation",
+    "author": "simplybobby",
+    "created_at": "2026-06-25T09:46:32.258Z",
+    "merged_at": "2026-07-07T15:42:54.947Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/887"
+  },
+  {
+    "project": "project/webform",
     "iid": 882,
     "title": "fix: #3594252 Catch exceptions in scheduled email cron",
     "author": "lkmorlan",
@@ -188,16 +198,6 @@
     "merged_at": "2026-05-15T14:46:42.995Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/866"
-  },
-  {
-    "project": "project/webform",
-    "iid": 865,
-    "title": "fix: #3589901 Do not use null as an array offset in WebformPluginElementController",
-    "author": "sivaji",
-    "created_at": "2026-05-13T10:51:57.551Z",
-    "merged_at": "2026-05-13T13:10:58.961Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/865"
   },
   {
     "project": "project/pathauto",
