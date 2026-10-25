@@ -201,6 +201,16 @@
   },
   {
     "project": "project/pathauto",
+    "iid": 183,
+    "title": "Memcache Transaction-Aware Issue After Upgrading to Pathauto 1.15.",
+    "author": "mktomanikandan",
+    "created_at": "2026-07-05T07:30:31.513Z",
+    "merged_at": "2026-10-19T15:30:21.636Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/183"
+  },
+  {
+    "project": "project/pathauto",
     "iid": 179,
     "title": "Resolve #3601975 \"Automated drupal 12\"",
     "author": "berdir",
@@ -288,15 +298,5 @@
     "merged_at": "2026-02-14T18:10:50.834Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/158"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 155,
-    "title": "task: #3573353 Improve flaky tests",
-    "author": "mably",
-    "created_at": "2026-02-13T10:12:19.171Z",
-    "merged_at": "2026-02-13T15:03:26.308Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/155"
   }
 ]
