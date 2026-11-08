@@ -101,6 +101,26 @@
   },
   {
     "project": "project/webform",
+    "iid": 974,
+    "title": "Issue #3635533 by jrockowitz: Support CAPTCHA 2.0.12 placement",
+    "author": "jrockowitz",
+    "created_at": "2026-11-05T13:48:14.860Z",
+    "merged_at": "2026-11-05T17:40:23.328Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/974"
+  },
+  {
+    "project": "project/webform",
+    "iid": 969,
+    "title": "fix: #3581263 Skip draft lookup for unsaved source entities",
+    "author": "ishfaqafridi85",
+    "created_at": "2026-10-27T05:40:37.170Z",
+    "merged_at": "2026-11-02T16:04:13.513Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/969"
+  },
+  {
+    "project": "project/webform",
     "iid": 966,
     "title": "fix: #3538392 Fix WebformImageSelectElementTest",
     "author": "lkmorlan",
@@ -178,26 +198,6 @@
     "merged_at": "2026-06-15T15:32:27.221Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/882"
-  },
-  {
-    "project": "project/webform",
-    "iid": 880,
-    "title": "fix: #3594290 Add void return type declaration to test methods",
-    "author": "lkmorlan",
-    "created_at": "2026-06-08T20:09:49.021Z",
-    "merged_at": "2026-06-08T20:19:26.203Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/880"
-  },
-  {
-    "project": "project/webform",
-    "iid": 879,
-    "title": "fix: #3594290 Add void return type declaration to test methods",
-    "author": "lkmorlan",
-    "created_at": "2026-06-08T19:38:36.619Z",
-    "merged_at": "2026-06-08T20:00:25.420Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/879"
   },
   {
     "project": "project/pathauto",
