@@ -101,6 +101,16 @@
   },
   {
     "project": "project/webform",
+    "iid": 976,
+    "title": "ci: #3636958 Run Webform 6.2.x CI on PHP 8.4",
+    "author": "jrockowitz",
+    "created_at": "2026-11-10T20:20:17.136Z",
+    "merged_at": "2026-11-10T21:21:29.365Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/976"
+  },
+  {
+    "project": "project/webform",
     "iid": 974,
     "title": "Issue #3635533 by jrockowitz: Support CAPTCHA 2.0.12 placement",
     "author": "jrockowitz",
@@ -190,14 +200,14 @@
     "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/887"
   },
   {
-    "project": "project/webform",
-    "iid": 882,
-    "title": "fix: #3594252 Catch exceptions in scheduled email cron",
-    "author": "lkmorlan",
-    "created_at": "2026-06-15T15:14:39.898Z",
-    "merged_at": "2026-06-15T15:32:27.221Z",
+    "project": "project/pathauto",
+    "iid": 192,
+    "title": "Disable deprecations",
+    "author": "berdir",
+    "created_at": "2026-10-13T23:03:50.015Z",
+    "merged_at": "2026-11-08T11:41:30.648Z",
     "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/webform/-/merge_requests/882"
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/192"
   },
   {
     "project": "project/pathauto",
@@ -208,6 +218,16 @@
     "merged_at": "2026-10-19T15:30:21.636Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/183"
+  },
+  {
+    "project": "project/pathauto",
+    "iid": 182,
+    "title": "remove forum integration",
+    "author": "berdir",
+    "created_at": "2026-07-04T11:32:31.851Z",
+    "merged_at": "2026-11-08T11:26:42.853Z",
+    "state": "merged",
+    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/182"
   },
   {
     "project": "project/pathauto",
@@ -278,25 +298,5 @@
     "merged_at": "2026-05-04T21:36:43.599Z",
     "state": "merged",
     "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/164"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 163,
-    "title": "fix: #3072876 Pattern not removed when deleting the corresponding entity",
-    "author": "mably",
-    "created_at": "2026-02-16T07:37:29.308Z",
-    "merged_at": "2026-02-20T09:34:47.556Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/163"
-  },
-  {
-    "project": "project/pathauto",
-    "iid": 158,
-    "title": "fix: #3573353 Improve flaky tests (suite)",
-    "author": "mably",
-    "created_at": "2026-02-14T14:42:52.038Z",
-    "merged_at": "2026-02-14T18:10:50.834Z",
-    "state": "merged",
-    "web_url": "https://git.drupalcode.org/project/pathauto/-/merge_requests/158"
   }
 ]
